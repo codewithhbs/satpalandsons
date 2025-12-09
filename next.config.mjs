@@ -1,23 +1,28 @@
-// next.config.js
-
 const isDev = process.env.NODE_ENV === 'development';
-module.exports = {
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     domains: [
       '5.imimg.com',
-      '4.imimg.com',              // ✅ add this line
+      '4.imimg.com',
       'via.placeholder.com',
-      'img.freepik.com' ,      // if you're using placeholder images too
+      'img.freepik.com',
       'endura-steel.com',
       'encrypted-tbn1.gstatic.com',
       'viraatindustries.com',
       'encrypted-tbn2.gstatic.com',
-    ],  
+    ],
   },
+
   typescript: {
-    ignoreBuildErrors: !isDev ? true : false,
+    ignoreBuildErrors: !isDev,
   },
+
   eslint: {
-    ignoreDuringBuilds: !isDev ? true : false,
+    ignoreDuringBuilds: !isDev,
   },
 };
+
+export default nextConfig;
+
